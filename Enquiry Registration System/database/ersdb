@@ -1,0 +1,172 @@
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
+--
+-- Host: localhost    Database: ersdb
+-- ------------------------------------------------------
+-- Server version	8.0.31
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `apply_leave`
+--
+
+DROP TABLE IF EXISTS `apply_leave`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `apply_leave` (
+  `eid` varchar(50) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `start_date` varchar(15) DEFAULT NULL,
+  `end_date` varchar(15) DEFAULT NULL,
+  `reason` varchar(100) DEFAULT NULL,
+  `apply_date` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `apply_leave`
+--
+
+LOCK TABLES `apply_leave` WRITE;
+/*!40000 ALTER TABLE `apply_leave` DISABLE KEYS */;
+INSERT INTO `apply_leave` VALUES ('1001','Akash','akashuprety2510@gamil.com','20/10/2003','23/10/2003','Party','2023-08-06 17:44:25'),('941811','Pankaj','pankaj@gmail.com','20/10/2023','22/10/2023','Party','2023-08-07 09:39:46'),('709828','Akash Sharma','akashuprety@gmail.com','26/10/2023','27/10/2023','Health Issue','2023-08-08 11:46:28');
+/*!40000 ALTER TABLE `apply_leave` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `attendance`
+--
+
+DROP TABLE IF EXISTS `attendance`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `attendance` (
+  `eid` varchar(30) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `first_half` varchar(30) DEFAULT NULL,
+  `second_half` varchar(30) DEFAULT NULL,
+  `day_time` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `attendance`
+--
+
+LOCK TABLES `attendance` WRITE;
+/*!40000 ALTER TABLE `attendance` DISABLE KEYS */;
+INSERT INTO `attendance` VALUES ('1001','Akash','akashuprety2510@gamil.com','Absent','Present','2023-08-06 17:22:30'),('1001','Akash','akashuprety2510@gamil.com','Absent','Absent','2023-08-06 17:27:41'),('709828','Akash Sharma','akashuprety@gmail.com','Present','Absent','2023-08-06 23:43:25'),('709828','Akash Sharma','akashuprety@gmail.com','Absent','Present','2023-08-10 17:31:06');
+/*!40000 ALTER TABLE `attendance` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `fees`
+--
+
+DROP TABLE IF EXISTS `fees`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `fees` (
+  `sid` int NOT NULL AUTO_INCREMENT,
+  `eid` varchar(10) DEFAULT NULL,
+  `name` varchar(30) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `java` float DEFAULT NULL,
+  `python` float DEFAULT NULL,
+  `php` float DEFAULT NULL,
+  `web` float DEFAULT NULL,
+  `basic` float DEFAULT NULL,
+  `month_year` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `fees`
+--
+
+LOCK TABLES `fees` WRITE;
+/*!40000 ALTER TABLE `fees` DISABLE KEYS */;
+INSERT INTO `fees` VALUES (1,'1001','Akash','akashuprety2510@gamil.com',2000,1000,1000,2000,6000,'January 2023'),(2,'1001','Akash','akashuprety2510@gamil.com',0,0,0,2000,0,'February 2023'),(3,'709828','Akash Sharma','akashuprety@gmail.com',100,100,100,100,100,'January 2024'),(4,'201348','Rohit','rohit@gmail.com',300,0,287,99,1000,'May 2023');
+/*!40000 ALTER TABLE `fees` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `login`
+--
+
+DROP TABLE IF EXISTS `login`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `login` (
+  `user` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `login`
+--
+
+LOCK TABLES `login` WRITE;
+/*!40000 ALTER TABLE `login` DISABLE KEYS */;
+INSERT INTO `login` VALUES ('Akash','A@kash123','akashuprety1025@gmail.com'),('Deepak','Deepak@123','infotechtemple@gmail.com'),('Username','Password','Email');
+/*!40000 ALTER TABLE `login` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `student`
+--
+
+DROP TABLE IF EXISTS `student`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `student` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `fname` varchar(50) DEFAULT NULL,
+  `age` varchar(3) DEFAULT NULL,
+  `dob` varchar(20) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
+  `phone` varchar(12) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `education` varchar(30) DEFAULT NULL,
+  `post` varchar(50) DEFAULT NULL,
+  `aadhar` varchar(50) DEFAULT NULL,
+  `eid` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `student`
+--
+
+LOCK TABLES `student` WRITE;
+/*!40000 ALTER TABLE `student` DISABLE KEYS */;
+INSERT INTO `student` VALUES (1,'Akash','Shiv','20','25/10/2003','Bodla','9878676755','akashuprety2510@gmail.com','BCA','Student','78778656745647','1001'),(3,'Mohit','Banwarilal Sharma','20','20/10/2002','Sikandra','8989897787','mohit@gmail.com','BSC','Student','29024842984','1002'),(4,'Deepak','ramaan','22','10/01/2000','sikandra','9809776561','deepak@gmail.com','BSC','student','6766534937','1003'),(5,'Rohit','raman','23','29/10/2000','Brijesh nagar colony Sikandra Agra','8877665564','rohit@gmail.com','BSC','Student','78687564647','1002'),(6,'Akash Sharma','Narayan Sharma','22','25/10/2003','Sikandra','9808122637','akashuprety@gmail.com','BCA','Student','876875654674','709828'),(7,'Rohit','Akash','18','2/5/2005','Sikandra','9878656746','rohit@gmail.com','BSC','Student','89776685674','201348'),(8,'Prakash','Mr. Pavan','35','22/1/1995','Bodla','898867866','prakash@gmail.com','BCS','Java Teacher','89786786343','215422'),(9,'Pankaj','Mr.Mohit','19','20/10/2004','Shahaganj','988766564','pankaj@gmail.com','MCA','Student','89778564545','941811'),(10,'Mohit','Parkash','22','24/2/2003','Bodla','989887234','mohit@gmail.com','BCA','Student','77685645434','553911'),(12,'Vishal','Mohit','22','10/10/2002','Bodla','8767675621','vishal@gmail.com','BA','Student','876767564446','724271'),(13,'rohit','rohit','18','20/10/2005','Bodla','7986766785','rohit@gmail.com','BA','Student','767854536463','208229');
+/*!40000 ALTER TABLE `student` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-08-10 18:14:46
